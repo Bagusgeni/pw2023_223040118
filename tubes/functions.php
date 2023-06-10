@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', '/pw2023_2230401/tubes/admin/');
+define('BASE_URL', '/pw2023_223040118/tubes/admin/');
 // koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "fashion");
 
@@ -258,4 +258,9 @@ function cari_berita($keyword)
 			  isi LIKE '%$keyword%'
 			";
 	return query($query);
+}
+
+
+function cekAktive($uri){
+	return ($_SERVER["REQUEST_URI"] === BASE_URL . $uri) ? 'active' : '';
 }

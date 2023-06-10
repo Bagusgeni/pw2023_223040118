@@ -1,5 +1,9 @@
 
 <?php
+session_start();
+if(!isset($_SESSION["login"])){
+  header("Location: login.php");
+}
 
 require '../functions.php';
 
@@ -40,7 +44,7 @@ if (isset($_POST["ubah"])) {
                     </div>
                     <div class="mb-3">
                        <label for="password" class="form-label">Password</label>
-                        <input class="form-control" type="password" id="password" name="password" value="<?= $id['id'];?>">
+                        <input class="form-control" type="password" id="password" name="password" value="<?= $id['password'];?>">
                     </div>
                     <div class="button">
 				        <button type="submit" name="ubah" class="btn btn-primary">Ubah</button>

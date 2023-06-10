@@ -41,3 +41,55 @@ button {
     top: var(--topNavbarHeight);
   }
 }
+
+.pdf {
+font-size: 50px;
+text-align: center;
+}
+
+.tb {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 10px 0;
+	font-size: 0.95rem;
+	min-width: 480px;
+	overflow: hidden;
+	border-radius: 5px 5px 0 0;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+}
+
+table .date {
+	width: 23%;
+}
+
+table .time {
+	width: 23%
+}
+
+table .loc {
+	width: 34%
+}
+
+.tb thead th {
+	background-color: #f11c1c;
+	color: #fff;
+	text-align: left;
+	font-weight: 500;
+}
+
+.tb thead th,
+.tb tbody td {
+	padding: 8px 10px;
+}
+
+.tb tbody tr{
+	border-bottom: 1px solid #ccc;
+}
+
+.tb tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3
+}
+
+.tb tbody tr:last-child {
+	border-bottom: 2px solid #4abcff
+}

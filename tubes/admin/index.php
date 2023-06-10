@@ -1,4 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION["login"])){
+  header("Location: login.php");
+}
 
+require '../functions.php';
+?>
    <?php require "partials/header.php" ?>
    <?php require "partials/nav.php" ?>
     <main class="mt-5 pt-3">

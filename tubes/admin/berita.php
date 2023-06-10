@@ -1,4 +1,8 @@
 <?php 
+session_start();
+if(!isset($_SESSION["login"])){
+  header("Location: login.php");
+}
 require '../functions.php';
 
 $berita = query("SELECT * FROM berita");
@@ -25,6 +29,7 @@ if(isset($_POST["cari"])){
           <input type="search" class="form-control" placeholder="Cari Admin" name="keyword" id="keyword_berita" autofocus autocomplete="off">
           <button class="btn btn-primary" type="submit" name="cari" id="cari_berita"><i class="bi bi-search"></i></button>
           <a href="berita_tambah.php" class="btn btn-danger ms-2 px-3">Tambah</a>
+          <a href="../pdf/cetak_berita.php" target="_blank" class="btn btn-dark ms-2 px-3">Cetak</a>
       </div>
       </form>
      </div>

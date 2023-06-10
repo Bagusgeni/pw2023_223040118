@@ -26,7 +26,7 @@
           <ul class="navbar-nav">
           <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
             <li>
-              <a href="index.php" class="nav-link px-3 active">
+              <a href="index.php" class="nav-link px-3 <?= cekAktive("index.php"); ?>">
                 <span class="me-2"><i class="bi bi-speedometer2"></i></span>
                 <span>Dashboard</span>
               </a>
@@ -38,21 +38,27 @@
               </div>
             </li>
             <li>
-              <a href="admin.php" class="nav-link px-3">
+              <a href="admin.php" class="nav-link px-3 <?= cekAktive("admin.php"); ?>">
                 <span class="me-2"><i class="bi bi-book-fill"></i></span>
                 <span>admin</span>
               </a>
             </li>
             <li>
-              <a href="category.php" class="nav-link px-3">
+              <a href="category.php" class="nav-link px-3 <?= cekAktive("category.php"); ?>">
                 <span class="me-2"><i class="bi bi-book-fill"></i></span>
                 <span>Category</span>
               </a>
             </li>
             <li>
-              <a href="berita.php" class="nav-link px-3">
+              <a href="berita.php" class="nav-link px-3 <?= cekAktive("berita.php"); ?>">
                 <span class="me-2"><i class="bi bi-book-fill"></i></span>
                 <span>Berita</span>
+              </a>
+            </li>
+            <li>
+              <a href="logout.php" class="nav-link px-3">
+                <span class="me-2"><i class="bi bi-book-fill"></i></span>
+                <span>Logout</span>
               </a>
             </li>
            </ul>
