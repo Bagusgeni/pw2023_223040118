@@ -10,6 +10,18 @@ $berita = query("SELECT * FROM berita");
 if(isset($_POST["cari"])){
     $berita = cari_berita($_POST["keyword"]);
 }
+
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'asc';
+
+$orderBy = isset($_GET['ordeyBy']) ? $_GET['orderBy'] : 'judul';
+
+$berita = query("SELECT * FROM berita ORDER BY $orderBy $sort");
+
+function flipSort($sort){
+    return $sort == 'asc' ? 'desc' : 'asc';
+}
+
+
 ?>
 
 
@@ -44,7 +56,16 @@ if(isset($_POST["cari"])){
                 <th>ID Berita</th>
                 <th>Category</th>
                 <th>Image</th>
-                <th>Judul</th>
+                <th><a href="?orderBy=judul&sort=<?= $orderBy == 'judul' ? flipSort($sort) : 'asc' ?>">
+                    judul
+                    <?php if($orderBy == 'judul') : ?>
+                        <?php if ($sort == 'asc') : ?>
+                            <i class="fa fa-sort-asc"></i>
+                            <?php else : ?>
+                            <i class="fa fa-sort-desc"></i>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    </a></th>
                 <th>Isi</th>
                 <th>Action</th>
             </tr>

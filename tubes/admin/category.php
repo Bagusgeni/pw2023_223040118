@@ -10,6 +10,17 @@ $kategori = query("SELECT * FROM kategori");
 if(isset($_POST["cari"])){
     $kategori = cari_category($_POST["keyword"]);
 }
+
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'asc';
+
+$orderBy = isset($_GET['ordeyBy']) ? $_GET['orderBy'] : 'category';
+
+$kategori = query("SELECT * FROM kategori ORDER BY $orderBy $sort");
+
+function flipSort($sort){
+    return $sort == 'asc' ? 'desc' : 'asc';
+}
+
 ?>
 
 
@@ -41,7 +52,17 @@ if(isset($_POST["cari"])){
         <thead class="table-info">
             <tr>
                 <th>ID Category</th>
-                <th>Category</th>
+                <th><a href="?orderBy=category&sort=<?= $orderBy == 'category' ? flipSort($sort) : 'asc' ?>">
+                    Category
+                    <?php if($orderBy == 'category') : ?>
+                        <?php if ($sort == 'asc') : ?>
+                            <i class="fa fa-sort-asc"></i>
+                            <?php else : ?>
+                            <i class="fa fa-sort-desc"></i>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    </a>
+                </th>
                 <th>Action</th>
             </tr>
         </thead>
