@@ -16,7 +16,7 @@ if (isset($_POST["tambah"])) {
         echo"<script>
         alert('berita gagal berhasil di tambahkan');
         document.location.href = 'berita_tambah.php';
-        </script>"
+        </script>";
     }
 }
 ?>
